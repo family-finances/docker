@@ -1,0 +1,13 @@
+version: "2.4"
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+    environment:
+      NODE_ENV: "${ENV}"
+    ports:
+      - ${APP_PORT}:${FRONTEND_PORT}
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
