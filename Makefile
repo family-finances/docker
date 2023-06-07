@@ -3,6 +3,8 @@
 help:
 	@make --help
 
+# server
+
 init: config download up
 
 config:
@@ -18,3 +20,8 @@ down:
 	@docker compose down --remove-orphans
 
 restart: down up
+
+# connections
+
+shell-frontend:
+	@docker compose exec --user node frontend /bin/sh
